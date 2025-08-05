@@ -5,11 +5,11 @@
   "main": "index.html",
   "type": "module",
   "scripts": {
-    "dev": "npx live-server src/"
+    "dev": "vite"
   },
   "author": "Vitor Fonseca",
   "license": "ISC",
-  "devDependencies": {
-    "live-server": "1.2.1"
+  "dependencies": {
+    "vite": "^7.0.6"
   }
 }

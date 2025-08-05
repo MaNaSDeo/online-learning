@@ -1,9 +1,9 @@
-export const renderDetailsPage = () => {
+export const renderHomePage = () => {
   const containerDiv = document.getElementById("container");
 
   const bodyContainer = document.createElement("div");
   const pageTitle = document.createElement("h1");
-  pageTitle.innerHTML = "This is detail page";
+  pageTitle.innerHTML = "This is home page";
   bodyContainer.appendChild(pageTitle);
   bodyContainer.style.cssText = `
     display: flex;
