@@ -1,7 +1,7 @@
 import React from "react";
 
 const Reliability = () => {
-  return <div>Reliability</div>;
+  return <div>Reliability Page</div>;
 };
 
 export default Reliability;
