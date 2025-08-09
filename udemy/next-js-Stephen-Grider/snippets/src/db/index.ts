@@ -1,4 +1,10 @@
-import { PrismaClient } from "@prisma/client/extension";
+// import { PrismaClient } from "@prisma/client/extension";
+import { PrismaClient } from "@/generated/prisma";
+/**
+ * Here the issue was, in schema.prisma we had
+ * --> output   = "../src/generated/prisma" <--
+ * so a new folder was getting created inside 'src' i.e. /generated/prisma, so now we are importing from there.
+ */
 
 export const db = new PrismaClient();
 
