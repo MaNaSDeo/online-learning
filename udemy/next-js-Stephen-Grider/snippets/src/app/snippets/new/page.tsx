@@ -1,6 +1,13 @@
 import React from "react";
 
 const SnippetCreatePage = () => {
+  async function createSnippet() {
+    // Needs to be a server action!
+    // Check the user's inputs and make sure they are valid
+    // Create a new record in the database
+    // Redirect the user back to the root route(for now, will redirect them to some more specific route when we will build them.)
+  }
+
   return (
     <form>
       <p className="font-bold m-3">Create a Snippet</p>
