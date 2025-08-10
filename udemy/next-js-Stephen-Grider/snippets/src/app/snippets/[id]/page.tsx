@@ -10,6 +10,10 @@ interface ISnippetShowPage {
 
 const Snippets: FC<ISnippetShowPage> = async (props) => {
   const { params } = props;
+
+  // Artificial delay to show loading screen
+  await new Promise((r) => setTimeout(r, 2000));
+
   const snippet = await db.snippet.findFirst({
     where: { id: parseInt(params.id, 10) },
   });
