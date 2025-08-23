@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import { db } from "@/db";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import * as actions from "@/actions";
 
 interface ISnippetShowPage {
   params: {
@@ -13,7 +14,7 @@ const Snippets: FC<ISnippetShowPage> = async (props) => {
   const { params } = props;
 
   // Artificial delay to show loading screen
-  await new Promise((r) => setTimeout(r, 2000));
+  await new Promise((r) => setTimeout(r, 1000));
 
   const snippet = await db.snippet.findFirst({
     where: { id: parseInt(params.id, 10) },
@@ -22,6 +23,9 @@ const Snippets: FC<ISnippetShowPage> = async (props) => {
   if (!snippet) {
     return notFound();
   }
+
+  const deleteSnippetAction = actions.deleteSnippet.bind(null, snippet.id);
+
   const { id, title, code } = snippet;
   return (
     <div>
@@ -31,7 +35,11 @@ const Snippets: FC<ISnippetShowPage> = async (props) => {
           <Link className="p-2 border rounded" href={`/snippets/${id}/edit`}>
             Edit
           </Link>
-          <button className="p-2 border rounded">Delete</button>
+          <form action={deleteSnippetAction}>
+            <button type="submit" className="p-2 border rounded">
+              Delete
+            </button>
+          </form>
         </div>
       </div>
       <pre className="p-3 border rounded bg-gray-200 border-gray-200">
