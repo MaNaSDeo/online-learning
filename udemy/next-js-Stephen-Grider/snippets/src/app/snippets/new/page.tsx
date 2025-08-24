@@ -35,7 +35,11 @@ const SnippetCreatePage = () => {
           />
         </div>
 
-        <div>{fromState.message}</div>
+        {fromState?.message && (
+          <div className=" my-2 p-2 bg-red-200 border rounded border-red-400">
+            {fromState.message}
+          </div>
+        )}
 
         <button className=" rounded p-2 bg-blue-200" type="submit">
           Create
