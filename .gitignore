@@ -300,3 +300,34 @@ replay_pid*
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+
+# VS Code
+.vscode/
+.history/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+out/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Maven
+target/
+
+# Gradle
+.gradle/
+build/
+
+# Jest cache
+.jest/
+.jest-cache/
+
